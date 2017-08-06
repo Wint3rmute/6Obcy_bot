@@ -1,0 +1,93 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>6Obcy Kontroler</title>
+
+  <style>
+
+body {
+  background-color: white;
+}
+
+  button {
+    width: 94%;
+    margin: 3%;
+    background-color: #19344D;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 0px 10px 0 rgba(0,0,0,0.19);
+    transition: 0.5s;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 5px 15px 0 rgba(0,0,0,0.20);
+}
+
+#seekG:hover{
+  background-color: #EC407A;
+}
+
+#seekB:hover{
+  background-color: #2196F3;
+}
+
+#stop:hover{
+  background-color: #FF5252;
+}
+
+#author:hover{
+  background-color: #00C853;
+}
+
+#manual:hover{
+  background-color: #FFAB00;
+}
+
+.divider {
+  margin: 7px;
+  height: 0px;
+  width: 100%;
+  background-color: #111;
+}
+
+.small {
+  font-size: 7px;
+}
+
+a{
+  color:white;
+  text-decoration: none;
+}
+
+
+
+  </style>
+
+</head>
+<body>
+
+<div id="container">
+  <button type="button" id="seekB"> SZUKAJ MĘŻCZYZN </button>
+  <button type="button" id="seekG"> SZUKAJ KOBIET </button>
+  <button type="button" id="stop"> STOP </button>
+  <div class="divider"></div>
+  <button type="button" id="author" class="small">AUTOR</button>
+  <button type="button" class="small" id="manual"> INSTRUKCJA </button>
+
+
+<script src="../script/control.js"></script>
+
+
+</div>
+
+
+
+</body>
+</html>

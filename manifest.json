@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "6Obcy Bot",
+  "description": "Bot wyszukujący kobiety lub mężczyzn na stronie 6obcy",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "html/control.html",
+    "default_title": "6Obcy Bot"
+  },
+  "permissions": [
+    "activeTab",
+    "notifications"
+  ],
+
+  "web_accessible_resources": [
+    "script/bot.js",
+    "script/control.js"
+  ],
+
+  "content_scripts": [
+   {
+     "matches": ["http://6obcy.com.pl/rozmawiaj"],
+     "js": ["script/script.js", "script/jquery-3.2.1.min.js"]
+   }
+ ]
+}
