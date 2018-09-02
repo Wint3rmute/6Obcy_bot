@@ -25,7 +25,7 @@
 
   "content_scripts": [
    {
-     "matches": ["http://6obcy.com.pl/rozmawiaj"],
+     "matches": ["https://6obcy.org/rozmowa"],
      "js": ["script/script.js", "script/jquery-3.2.1.min.js"]
    }
  ]
