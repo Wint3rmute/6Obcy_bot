@@ -120,12 +120,8 @@
         if(!messageSent)
         {
 
-          if(who == 1)
-            {sendMessage("k");}
-          else
-            {sendMessage("m");}
-
-          sendMessage("km?");
+          //sendMessage("Linux x201 4.20.7-arch1-1-ARCH #1 SMP PREEMPT Wed Feb 6 18:42:40 UTC 2019 x86_64 GNU/Linux");
+          sendMessage("$: ");
 
           messageSent = true;
           startTime = performance.now();
@@ -133,47 +129,22 @@
           continue;
         }
 
-        message = getLastMessage().toLowerCase();
+        message = getLastMessage();
+        //alert(message);
+        
+      
+        if(message.indexOf('$:') == -1)
+          $.ajax({
+            type: "POST",
+            url: "http://localhost:5000/command",
+            data: message,
+            success: function (data) {
+              console.log(data)
+              sendMessage("$: " + data)
+            },
+          });
 
-        var analysis = analyzeMessage(message, who);
-        if(analysis == 1)
-        {
-          found = true;
-          console.log("found!");
-          alert("Znaleziono!");
-        }
-        else if(analysis == 0)
-        {
-          //console.log("no good answer");
-        }else {
-          console.log("NOPE");
-          //sendMessage("chyba masz siusiaka więc elo");
-          // totalnie odkomentuj to jeśli jesteś fajny/fajna
-
-          await sleep(4000);
-          messageSent = false;
-
-
-          if(!isConnected)
-          return;
-
-          pressEscape();
-          pressEscape();
-          pressEscape();
-          continue;
-        }
-
-                  if(performance.now() - startTime > 20000)
-                  {
-                    console.log("no answer! disconnecting");
-                    pressEscape();
-                    pressEscape();
-                    pressEscape();
-                    continue;
-                  }else{
-                    console.log((performance.now() - startTime)/1000 );
-                    await sleep(1000);
-                  }
+          await sleep(2500);
 
       }
     }
